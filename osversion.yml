@@ -1,6 +1,5 @@
 ---
-- name: Check OS version
-  hosts: all
+- hosts: all
   tasks:
   - name: cat /etc/issue
   shell: cat /etc/issue
