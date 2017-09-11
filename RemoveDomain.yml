@@ -1,0 +1,14 @@
+---
+  - name: remove machine from domain
+    hosts: all
+    gather_facts: no
+    tasks:
+      - win_domain_membership:
+          workgroup_name: WORKGROUP
+          domain_admin_user: administrator@ansible.com
+          domain_admin_password: Atos@123
+          state: workgroup
+        register: domain_state
+
+      - win_reboot:
+        when: domain_state.reboot_required
