@@ -9,7 +9,7 @@
         win_copy: src=/home/automation/activedirectory/computername.txt dest=C:\Temp\
 
       - name: running powershell script
-        script: C:\Temp\dnsscript.ps1 
+        win_shell: C:\Temp\dnsscript.ps1 
 
       - name: Adding to domain
         win_domain_membership:
